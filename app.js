@@ -1,30 +1,22 @@
-require('dotenv').config()
+require('dotenv').config();
 
-const express = require('express')
-const routes = require("./routes/");
-const mongoose = require('mongoose')
+const express = require('express');
 const cors = require("cors");
-
+const routes = require("./routes/");
+const mongoose = require("mongoose");
 
 const app = express()
 const port = 3000
-
+const uri = process.env.MONGODBCONNECT
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const uri = process.env.MONGODBCONNECT
-mongoose.connect(
-  uri,
-  {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-    family: 4 // Use IPv4, skip trying IPv6
-  }
-).catch(error => {
-    console.log(error)
-});
+main().catch(err => console.log(err));
+
+async function main() {
+  await mongoose.connect(uri);
+}
 
 app.use("/", routes);
 
