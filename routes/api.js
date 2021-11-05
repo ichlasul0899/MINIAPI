@@ -12,9 +12,6 @@ router.post("/table", ApiController.createTable);
 // Buat Schema Tabel / Nama Kolom
 router.post("/schema", ApiController.createSchemaTable);
 
-// Menambahkan data ke database new API
-router.post("/addData", ApiController.addData);
-
 // Buat Api Link
 router.post("/", ApiController.createApi);
 
@@ -27,5 +24,6 @@ router.post("/", ApiController.createApi);
 // Hapus data
 
 // Hapus API 
+// router.delete("")
 
 module.exports = router;

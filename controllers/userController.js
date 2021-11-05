@@ -26,6 +26,8 @@ class UserController {
                     token,
                     message: `Success login. Hello ${email}` 
                 })
+            } else {
+                throw {"error" : "User password wrong!"}
             }
 
         } catch(error){

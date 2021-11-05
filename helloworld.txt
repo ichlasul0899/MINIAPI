@@ -6,6 +6,18 @@ My Task
 [x] Buat model API
 [x] Buat Controller 
 [x] Buat Routes
-[ ] add route
+[x] add route
+[x] perbaiki login error
+
+Tiap New API
+- Get Data
+- Get Detail Data By Id
+- Update Detail Data By Id
+- Delete Data By Id
+- Delete This API
+
+
+Selain ini
+delete data Controller bisa bikin kondisi jika id tidak ada maka akan di delete Api nya langsung
 
 
